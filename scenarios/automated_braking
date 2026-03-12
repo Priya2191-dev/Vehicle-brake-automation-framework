@@ -1,1 +1,8 @@
+def automated_braking(speed, obstacle_distance):
 
+    if obstacle_distance < 10 and speed > 30:
+        brake_pressure = 40
+    else:
+        brake_pressure = 0
+
+    return brake_pressure
