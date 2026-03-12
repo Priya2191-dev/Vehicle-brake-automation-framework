@@ -29,11 +29,17 @@ Jenkins CI/CD
 ## Repository Structure
  
 digital_twin -> vehicle model  
+
 scenarios -> automated braking
+
 can_simulaton -> send/receive messages
+
 simulation -> brake physics
+
 telemetry -> data collection  
+
 ai_analysis -> anomaly detection
+
 dashboard -> visualization  
 
 ## Example Output
