@@ -188,10 +188,6 @@ Continuous Integration
 
 ---
 
-Project CI test rerun
-
----
-
 # Priyanka Lale
 
 Automation Test Engineering Portfolio Project
