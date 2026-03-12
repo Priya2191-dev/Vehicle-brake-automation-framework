@@ -8,12 +8,14 @@ This project demonstrates how modern automotive QA engineers build automation fr
 
 The framework combines:
 
-• Behavior Driven Development (BDD) testing  
-• Digital Twin vehicle simulation  
-• Brake system physics simulation  
-• Telemetry monitoring  
-• AI anomaly detection  
-• Automated CI/CD testing pipeline  
+ Behavior Driven Development (BDD) testing  
+ Digital Twin vehicle simulation 
+ Automated braking scenarios
+ Can bus communication
+ Brake system physics simulation  
+ Telemetry monitoring  
+ AI anomaly detection  
+ Automated CI/CD testing pipeline  
 
 The project architecture simulates a real automotive validation environment used in automotive engineering.
 
@@ -26,21 +28,23 @@ The project architecture simulates a real automotive validation environment used
 Architecture Flow:
 
 BDD Test Scenarios  
-↓  
+
 Step Definitions  
-↓  
+
 Automation Testing Framework  
-↓  
-Brake Simulation Engine  
-↓  
+ 
 Digital Twin Vehicle Model  
-↓  
+
+Automation Braking Scenarios
+
 CAN Bus Communication  
-↓  
+
+Simulation Braking Engine
+
 Telemetry Monitoring  
-↓  
-AI Anomaly Detection  
-↓  
+
+AI Anomaly Detection 
+
 Dashboard Visualization
 
 ---
@@ -61,30 +65,26 @@ These scripts control the simulation and validate braking behaviour.
 
 ---
 
-Step 3 — Brake Simulation Engine
-
-The **simulation** folder contains the braking physics model.
-
-It simulates:
-
-• vehicle deceleration  
-• brake pressure effect  
-• speed reduction
-
----
-
-Step 4 — Digital Twin Vehicle Model
+Step 3 — Digital Twin Vehicle Model
 
 The **digital_twin** folder creates a virtual representation of the vehicle.
 
 It simulates:
 
-• vehicle speed  
-• mass  
-• braking force  
-• acceleration
+vehicle speed  
+mass  
+braking force  
+acceleration
 
 This allows the automation framework to test braking logic without a real vehicle.
+
+---
+
+Step 4 - Automated Braking Scenarios
+
+The **scenario** folder creates to simulate automated braking when an obstacle is detected.
+
+If vehicle speed is high and obstacle distance is small, it triggers braking automatically.
 
 ---
 
@@ -94,28 +94,40 @@ The **can_bus** module simulates automotive communication between vehicle compon
 
 Example data signals:
 
-• speed sensor data  
-• brake pressure signal  
-• ABS activation signal
+speed sensor data  
+brake pressure signal  
+ABS activation signal
 
 ---
 
-Step 6 — Telemetry Monitoring
+Step 6 - Brake Simulation Engine
+
+The **simulation** folder contains the braking physics model.
+
+It simulates:
+
+vehicle deceleration
+brake pressure effect
+speed reduction
+
+---
+
+Step 7 — Telemetry Monitoring
 
 The **telemetry** folder records system data during simulation.
 
 Collected telemetry data includes:
 
-• vehicle speed  
-• brake pressure  
-• braking time  
-• deceleration rate
+vehicle speed  
+brake pressure  
+braking time  
+deceleration rate
 
 This data is stored and used for analysis.
 
 ---
 
-Step 7 — AI Anomaly Detection
+Step 8 — AI Anomaly Detection
 
 The **ai_analysis** folder performs intelligent analysis of telemetry data.
 
@@ -123,13 +135,13 @@ It detects abnormal braking behaviour using statistical anomaly detection.
 
 Example anomalies:
 
-• sudden speed drops  
-• brake failure patterns  
-• unrealistic sensor readings
+sudden speed drops  
+brake failure patterns  
+unrealistic sensor readings
 
 ---
 
-Step 8 — Dashboard Visualization
+Step 9 — Dashboard Visualization
 
 The **dashboards** folder generates visual graphs for braking performance.
 
@@ -139,13 +151,13 @@ Example visualization:
 
 Graphs show:
 
-• speed vs time  
-• brake pressure vs time  
-• braking efficiency
+speed vs time  
+brake pressure vs time  
+braking efficiency
 
 ---
 
-Step 9 — Automation Testing
+Step 10 — Automation Testing
 
 Automation test scripts validate braking system behaviour.
 
@@ -153,7 +165,7 @@ If braking fails to reduce speed → test fails.
 
 ---
 
-Step 10 — Continuous Integration Pipeline
+Step 11 — Continuous Integration Pipeline
 
 The project includes automated testing pipelines using GitHub automation.
 
