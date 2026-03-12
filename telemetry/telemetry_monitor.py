@@ -5,14 +5,7 @@ class TelemetryMonitor:
 
     def record(self, speed, pressure):
 
-        data = {
+        self.logs.append({
             "speed": speed,
-            "brake_pressure": pressure
-        }
-
-        self.logs.append(data)
-
-    def display(self):
-
-        for log in self.logs:
-            print(log)
+            "pressure": pressure
+        })
