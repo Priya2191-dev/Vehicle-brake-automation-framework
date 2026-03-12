@@ -1,13 +1,20 @@
-import can
+class CANBusSimulator:
 
-bus = can.interface.Bus(channel="virtual", bustype="virtual")
+    def __init__(self):
+        self.messages = []
 
-message = can.Message(
-    arbitration_id=0x101,
-    data=[int(vehicle.speed), vehicle.brake_pressure, int(vehicle.abs_active)],
-    is_extended_id=False
-)
+    def send_message(self, sender, receiver, signal, value):
 
-bus.send(message)
+        message = {
+            "sender": sender,
+            "receiver": receiver,
+            "signal": signal,
+            "value": value
+        }
 
-print("CAN Message Sent:", message)
+        self.messages.append(message)
+
+    def display_messages(self):
+
+        for msg in self.messages:
+            print(msg)
