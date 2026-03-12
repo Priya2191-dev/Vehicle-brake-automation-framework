@@ -188,15 +188,7 @@ Continuous Integration
 
 ---
 
-# Future Improvements
-
-Possible extensions of this framework include:
-
-• ABS braking simulation  
-• vehicle sensor fault injection  
-• machine learning braking prediction  
-• real CAN bus integration  
-• hardware-in-the-loop simulation
+Project CI test rerun
 
 ---
 
