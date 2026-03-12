@@ -1,3 +1,4 @@
+can
 numpy
 matplotlib
 pytest
