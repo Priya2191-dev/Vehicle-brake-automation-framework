@@ -1,7 +1,6 @@
 class Vehicle:
 
-    def __init__(self, mass=1500):
-        self.mass = mass
+    def __init__(self):
         self.speed = 0
         self.brake_pressure = 0
 
@@ -12,8 +11,5 @@ class Vehicle:
 
         self.brake_pressure = pressure
         self.speed -= pressure * 0.2
-
-        if self.speed < 0:
-            self.speed = 0
 
         return self.speed
