@@ -1,10 +1,10 @@
 from behave import given, when, then
 import os
-from dashboard import plot   
+from plotter import plot
 
 @given('dashboard speed values {values}')
 def step_impl(context, values):
-    context.speeds = [int(v) for v in values.split(",")]
+    context.speed = [int(v) for v in values.split(",")]
 
 @given('dashboard pressure values {values}')
 def step_impl(context, values):
@@ -12,7 +12,7 @@ def step_impl(context, values):
 
 @when('the plot is generated')
 def step_impl(context):
-    plot(context.speeds, context.pressure)
+    plot(context.speed, context.pressure)
 
 @then('a plot file should be created')
 def step_impl(context):
