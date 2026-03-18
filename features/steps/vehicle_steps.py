@@ -18,7 +18,7 @@ def step_impl(context, value):
 def step_impl(context, pressure):
     context.new_speed = context.vehicle.apply_brake(float(pressure))
 
-@then('the speed should be {expected}')
+@then('the vehicle speed should be {expected}')
 def step_impl(context, expected):
     assert round(context.vehicle.speed, 2) == float(expected)
 
