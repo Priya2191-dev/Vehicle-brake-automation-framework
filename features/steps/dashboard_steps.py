@@ -2,7 +2,7 @@ from behave import given, when, then
 import os
 from dashboard import plot   
 
-@given('speed values {values}')
+@given('dashboard speed values {values}')
 def step_impl(context, values):
     context.speed = [int(v) for v in values.split(",")]
 
