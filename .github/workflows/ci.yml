@@ -23,15 +23,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Set PYTHONPATH
-      run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-
     - name: Debug Files
       run: ls -R
 
-    - name: Run Pytest
-      run: pytest -v
+    - name: Run Tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+      run: |
+        pytest -v
+        behave -v
 
-    - name: Run Behave
-      run: behave -v
       
