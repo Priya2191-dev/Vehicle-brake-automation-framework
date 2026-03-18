@@ -4,7 +4,7 @@ from dashboard import plot
 
 @given('dashboard speed values {values}')
 def step_impl(context, values):
-    context.speed = [int(v) for v in values.split(",")]
+    context.speeds = [int(v) for v in values.split(",")]
 
 @given('dashboard pressure values {values}')
 def step_impl(context, values):
@@ -12,7 +12,7 @@ def step_impl(context, values):
 
 @when('the plot is generated')
 def step_impl(context):
-    plot(context.speed, context.pressure)
+    plot(context.speeds, context.pressure)
 
 @then('a plot file should be created')
 def step_impl(context):
