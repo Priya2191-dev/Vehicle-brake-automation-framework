@@ -1,6 +1,6 @@
 from behave import given, when, then
 import os
-from plotter import plot
+from dashboard import plot
 
 @given('dashboard speed values {values}')
 def step_impl(context, values):
