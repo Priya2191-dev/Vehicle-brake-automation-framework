@@ -7,6 +7,6 @@ Feature: Vehicle behavior
 
   Scenario: Apply brake reduces speed
     Given a vehicle with initial speed 100
-    When brake is applied with pressure 20
+    When vehicle brake is applied with pressure 20
     Then vehicle speed should be 96
     And brake pressure should be 20
