@@ -1,4 +1,4 @@
-from src.vehicle import Vehicle
+from vehicle import Vehicle
 
 def test_braking():
     v = Vehicle()
