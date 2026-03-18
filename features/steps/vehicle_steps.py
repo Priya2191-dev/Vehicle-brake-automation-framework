@@ -14,7 +14,7 @@ def step_impl(context, speed):
 def step_impl(context, value):
     context.vehicle.accelerate(float(value))
 
-@when('brake is applied with pressure {pressure}')
+@when('vehicle brake is applied with pressure {pressure}')
 def step_impl(context, pressure):
     context.vehicle.apply_brake(float(pressure))
 
