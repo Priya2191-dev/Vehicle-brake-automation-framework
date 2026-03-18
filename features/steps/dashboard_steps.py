@@ -6,7 +6,7 @@ from dashboard import plot
 def step_impl(context, values):
     context.speed = [int(v) for v in values.split(",")]
 
-@given('pressure values {values}')
+@given('dashboard pressure values {values}')
 def step_impl(context, values):
     context.pressure = [int(v) for v in values.split(",")]
 
