@@ -28,7 +28,7 @@ jobs:
 
     - name: Run Tests
       env:
-        PYTHONPATH: ${{ github.workspace }}
+        PYTHONPATH: ${{ github.workspace }}/src
       run: |
         pytest -v
         behave -v
