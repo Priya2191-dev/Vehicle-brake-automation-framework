@@ -1,6 +1,7 @@
-import matplot.pyplot as plt
+import matplotlib.pyplot as plt
 
 def plot(speed, pressure):
     plt.plot(speed)
     plt.plot(pressure)
-    plt.show()
+    plt.savefig("plot.png")
+    plt.close()
