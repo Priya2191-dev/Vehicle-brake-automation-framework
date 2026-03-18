@@ -7,7 +7,7 @@ def step(context):
 
 @given('obstacle distance is 5')
 def step(context):
-    context.distaance = 5
+    context.distance = 5
 
 @when('system evaluates braking')
 def step(context):
