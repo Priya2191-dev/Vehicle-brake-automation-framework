@@ -1,11 +1,11 @@
 from behave import given, when, then
-from vehicle import Vehicle  
+from vehicle import Vehicle
 
-@given('the vehicle')
+@given('a vehicle')
 def step_impl(context):
     context.vehicle = Vehicle()
 
-@given('the vehicle with initial speed {speed}')
+@given('a vehicle with initial speed {speed}')
 def step_impl(context, speed):
     context.vehicle = Vehicle()
     context.vehicle.speed = float(speed)
@@ -14,9 +14,9 @@ def step_impl(context, speed):
 def step_impl(context, value):
     context.vehicle.accelerate(float(value))
 
-@when('the vehicle brake is applied with pressure {pressure}')
+@when('brake is applied with pressure {pressure}')
 def step_impl(context, pressure):
-    context.new_speed = context.vehicle.apply_brake(float(pressure))
+    context.vehicle.apply_brake(float(pressure))
 
 @then('vehicle speed should be {expected}')
 def step_impl(context, expected):
