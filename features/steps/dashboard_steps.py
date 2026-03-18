@@ -1,0 +1,19 @@
+from behave import given, when, then
+import os
+from dashboard import plot   
+
+@given('speed values {values}')
+def step_impl(context, values):
+    context.speed = [int(v) for v in values.split(",")]
+
+@given('pressure values {values}')
+def step_impl(context, values):
+    context.pressure = [int(v) for v in values.split(",")]
+
+@when('the plot is generated')
+def step_impl(context):
+    plot(context.speed, context.pressure)
+
+@then('a plot file should be created')
+def step_impl(context):
+    assert os.path.exists("plot.png")
