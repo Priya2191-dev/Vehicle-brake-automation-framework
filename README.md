@@ -18,24 +18,31 @@ This project mimics real-world automotive systems by integrating:
 ## Features
 
 - Digital Twin Vehicle Model
+  
 Simulates speed, brake pressure, and acceleration  
 
 - Brake Simulation Engine
+  
 Uses formula: new_speed = speed − (pressure × factor)
 
 - Automated Braking
+  
 Detects obstacles and applies brakes automatically  
 
 - CAN Bus Simulation
+  
 Simulates ECU communication  
 
 - Telemetry Monitoring
+  
 Captures speed, pressure, and sensor data  
 
 - AI Anomaly Detection
+  
 Detects abnormal system behavior  
 
 - Dashboard Visualization
+  
 Graphs using Matplotlib 
 
 ## Installation
