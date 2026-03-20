@@ -23,27 +23,27 @@ This project mimics real-world automotive systems by integrating:
 
 - Brake Simulation Engine
   
-Uses formula: new_speed = speed − (pressure × factor)
+  Uses formula: new_speed = speed − (pressure × factor)
 
 - Automated Braking
   
-Detects obstacles and applies brakes automatically  
+  Detects obstacles and applies brakes automatically  
 
 - CAN Bus Simulation
   
-Simulates ECU communication  
+  Simulates ECU communication  
 
 - Telemetry Monitoring
   
-Captures speed, pressure, and sensor data  
+  Captures speed, pressure, and sensor data  
 
 - AI Anomaly Detection
   
-Detects abnormal system behavior  
+  Detects abnormal system behavior  
 
 - Dashboard Visualization
   
-Graphs using Matplotlib 
+  Graphs using Matplotlib 
 
 ## Installation
 
