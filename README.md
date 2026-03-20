@@ -1,6 +1,6 @@
 # 🚗 Vehicle Brake Automation Framework
 
-## 📌 Overview
+## Overview
 
 The Vehicle Brake Automation Framework is an end-to-end Python-based automation testing system designed to simulate and validate vehicle braking behavior.
 
@@ -15,64 +15,66 @@ This project mimics real-world automotive systems by integrating:
 - Dashboard visualization  
 - BDD and unit test automation  
 
----
+## Features
 
-## 🎯 Key Features
+= Digital Twin Vehicle Model
+Simulates speed, brake pressure, and acceleration  
 
-### 🔹 Digital Twin Vehicle Model
-- Simulates speed, brake pressure, and acceleration  
+= Brake Simulation Engine
+Uses formula: new_speed = speed − (pressure × factor)
 
-### 🔹 Brake Simulation Engine
-- Uses formula: new_speed = speed − (pressure × factor)
+= Automated Braking
+Detects obstacles and applies brakes automatically  
 
-### 🔹 Automated Braking
-- Detects obstacles and applies brakes automatically  
+= CAN Bus Simulation
+Simulates ECU communication  
 
-### 🔹 CAN Bus Simulation
-- Simulates ECU communication  
+- Telemetry Monitoring
+Captures speed, pressure, and sensor data  
 
-### 🔹 Telemetry Monitoring
-- Captures speed, pressure, and sensor data  
+= AI Anomaly Detection
+Detects abnormal system behavior  
 
-### 🔹 AI Anomaly Detection
-- Detects abnormal system behavior  
+= Dashboard Visualization
+Graphs using Matplotlib 
 
-### 🔹 Dashboard Visualization
-- Graphs using Matplotlib  
+## Installation
 
----
+git clone https://github.com/Priya2191-dev/Vehicle-brake-automation-framework.git
 
-## Demo
+cd Vehicle-brake-automation-framework
 
-Open in google collab
+pip install -r requirements.txt
 
----
+## Interactive Simulation Demo
 
-## 🧪 Testing
+[Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/Vehicle-brake-automation-framework/blob/main/notebook/Vehicle-brake-automation-framework.ipynb)
 
-### BDD Testing
-behave
+## Testing
 
-### Unit Testing
-pytest
+- Automation Testing (Pytest + BDD)
+- CI/CD Integration
 
----
+## Usage
 
-## ⚙️ CI/CD
+Run tests:
 
-- GitHub Actions pipeline  
-- Automated test execution  
+- pytest
+  
+- behave
 
----
+## CI/CD
 
-## ▶️ Run Project
+GitHub actions pipeline run pytest and behave automatically. 
 
-pip install -r requirements.txt  
-pytest  
-behave 
+## Technologies
 
----
+- matplotlib
+- python -can
+- numpy
+- pytest
+- behave
 
-## 👨‍💻 Author
+## Author
 
 Priyanka Lale
