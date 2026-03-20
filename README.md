@@ -17,9 +17,9 @@ This project mimics real-world automotive systems by integrating:
 
 ## Features
 
-### Digital Twin Vehicle Model
+- Digital Twin Vehicle Model
   
-    Simulates speed, brake pressure, and acceleration  
+  Simulates speed, brake pressure, and acceleration  
 
 - Brake Simulation Engine
   
