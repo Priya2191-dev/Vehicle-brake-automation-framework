@@ -1,5 +1,5 @@
 from behave import given, when, then
-from src.braking import automated_braking
+from braking import automated_braking
 
 @given('vehicle speed is 80')
 def given_speed(context):
