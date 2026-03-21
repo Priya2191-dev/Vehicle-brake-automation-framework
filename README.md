@@ -1,5 +1,9 @@
 # 🚗 Vehicle Brake Automation Framework
 
+## Objective
+
+This project is BDD-based python aautomation framework designed to validate vehicle braking systems by simulating different driving conditions such as speed, brake pressure and failure scenarios.
+
 ## Overview
 
 The Vehicle Brake Automation Framework is an end-to-end Python-based automation testing system designed to simulate and validate vehicle braking behavior.
@@ -14,13 +18,6 @@ This project mimics real-world automotive systems by integrating:
 - AI-based anomaly detection  
 - Dashboard visualization  
 - BDD and unit test automation
-
-## Objective
-
-- To design and develop an automation framework for validating vehicle braking systems using python and BDD.
-- To simulate real world braking scenarios.
-- To ensure system reliability by validating brake response, safety threshold and input haandling.
-- To integrate CI/CD for continuous testing and faster feedback on code changes.
 
 ## Features
 
