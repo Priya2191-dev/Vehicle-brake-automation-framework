@@ -42,7 +42,7 @@ def step_accelerator(context):
     context.accelerator = True
 
 
-@when('brake is applied with pressure {pressure}')
+@when('brake is applied with pressure {pressure} in edge cases')
 def step_apply_brake(context, pressure):
     context.pressure = int(pressure)
     context.error = None
