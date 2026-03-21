@@ -1,25 +1,37 @@
-from behave import given, when, then
-from src.brake_system import validate_brake
+Feature: Vehicle Brake Validation
 
-@given('dashboard speed values {values}')
-def step_speed(context, values):
-    context.speed = [int(v) for v in values.split(",")]
+  Scenario: Normal braking condition
+    Given brake system speed values 10,20,30
+    And brake system pressure values 5,10,15
+    When the brake validation is performed
+    Then braking performance should be valid
 
-@given('dashboard pressure values {values}')
-def step_pressure(context, values):
-    context.pressure = [int(v) for v in values.split(",")]
+  Scenario: Edge case - Zero speed
+    Given brake system speed values 0,0,0
+    And brake system pressure values 0,0,0
+    When the brake validation is performed
+    Then braking performance should be valid
 
-@when('the brake validation is performed')
-def step_validate(context):
-    try:
-        context.result = validate_brake(context.speed, context.pressure)
-    except Exception:
-        context.result = False
+  Scenario: Edge case - Maximum speed
+    Given brake system speed values 120,150,180
+    And brake system pressure values 50,70,90
+    When the brake validation is performed
+    Then braking performance should be valid
 
-@then('braking performance should be valid')
-def step_valid(context):
-    assert context.result is True
+  Scenario: Failure case - Low brake pressure
+    Given brake system speed values 40,60,80
+    And brake system pressure values 5,10,15
+    When the brake validation is performed
+    Then braking performance should be invalid
 
-@then('braking performance should be invalid')
-def step_invalid(context):
-    assert context.result is False
+  Scenario: Failure case - Negative values
+    Given brake system speed values -10,20,30
+    And brake system pressure values 5,15,25
+    When the brake validation is performed
+    Then braking performance should be invalid
+
+  Scenario: Failure case - Mismatched data
+    Given brake system speed values 10,20,30
+    And brake system pressure values 5,10
+    When the brake validation is performed
+    Then braking performance should be invalid
