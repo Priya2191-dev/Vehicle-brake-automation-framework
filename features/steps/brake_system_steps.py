@@ -1,11 +1,11 @@
 from behave import given, when, then
 from brake_system import validate_brake
 
-@given('dashboard speed values {values}')
+@given('brake system speed values {values}')
 def given_speed(context, values):
     context.speed = [int(v) for v in values.split(",")]
 
-@given('dashboard pressure values {values}')
+@given('brake system pressure values {values}')
 def given_pressure(context, values):
     context.pressure = [int(v) for v in values.split(",")]
 
