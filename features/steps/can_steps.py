@@ -1,5 +1,5 @@
 from behave import given, when, then
-from src.can_bus import CANBusSimulator   # adjust if your path differs
+from can_bus import CANBusSimulator   
 
 @given('a CAN bus simulator')
 def given_can_simulator(context):
