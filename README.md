@@ -13,7 +13,14 @@ This project mimics real-world automotive systems by integrating:
 - Telemetry monitoring  
 - AI-based anomaly detection  
 - Dashboard visualization  
-- BDD and unit test automation  
+- BDD and unit test automation
+
+## Objective
+
+- To design and develop an automation framework for validating vehicle braking systems using python and BDD.
+- To simulate real world braking scenarios.
+- To ensure system reliability by validating brake response, safety threshold and input haandling.
+- To integrate CI/CD for continuous testing and faster feedback on code changes.
 
 ## Features
 
@@ -81,6 +88,10 @@ GitHub actions pipeline run pytest and behave automatically.
 - numpy
 - pytest
 - behave
+
+## Conclusion
+
+The framework successfully automates validation of braking functionalities under various scenarios. CI/CD integration ensures consistent and reliable execution of tests.
 
 ## Author
 
