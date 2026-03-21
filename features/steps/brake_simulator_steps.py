@@ -5,7 +5,7 @@ from brake_simulator import BrakeSimulator
 def given_vehicle_speed(context, speed):
     context.simulator = BrakeSimulator(float(speed))
 
-@when('brake is applied with pressure {pressure}')
+@when('vehicle brake is applied with pressure {pressure}')
 def when_apply_brake(context, pressure):
     context.new_speed = context.simulator.apply_brake(float(pressure))
 
