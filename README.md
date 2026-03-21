@@ -2,7 +2,10 @@
 
 ## Objective
 
-This project is BDD-based python aautomation framework designed to validate vehicle braking systems by simulating different driving conditions such as speed, brake pressure and failure scenarios.
+- To design and develop an automation framework for validating vehicle braking system using Python and BDD.
+- To simulate real world braking scenarios including normal, edge and failure conditions.
+- To ensure system reliability by validating brake response, safety thresholds, input handling.
+- To integrate CI/CD for continuous testing and faster feedback on code changes.
 
 ## Overview
 
@@ -12,7 +15,7 @@ This project mimics real-world automotive systems by integrating:
 
 - Digital Twin vehicle modeling
 - Automated braking scenario
-- Brake system simulation  
+- Brake system simulation
 - CAN bus communication  
 - Telemetry monitoring  
 - AI-based anomaly detection  
