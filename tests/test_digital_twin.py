@@ -1,4 +1,4 @@
-from vehicle import Vehicle
+from digital_twin import Vehicle
 
 def test_braking():
     v = Vehicle()
