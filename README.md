@@ -81,7 +81,7 @@ Run tests:
 
 GitHub actions pipeline run pytest and behave automatically. 
 
-## Technologies
+## Tech stack
 
 - matplotlib
 - python -can
