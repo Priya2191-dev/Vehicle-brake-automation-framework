@@ -37,6 +37,8 @@ def when_apply_brake(context, pressure):
     if not hasattr(context, 'speed'):
         context.speed = 0
 
+    context.priority = None
+    
     # Validation logic
     if hasattr(context, 'brake_system') and not context.brake_system:
         context.error = "Brake Failure"
@@ -88,4 +90,5 @@ def then_delay(context):
 
 @then('brake should take priority')
 def then_priority(context):
+    assert context.priority is not None, "Priority was not set"
     assert context.priority == "Brake"
