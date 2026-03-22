@@ -49,8 +49,9 @@ def when_apply_brake(context, pressure):
 
     elif hasattr(context, 'response_time') and context.response_time > MAX_RESPONSE_TIME:
         context.error = "Delay Error"
-
-    elif hasattr(context, 'accelerator') and context.accelerator:
+        
+    # Always check priority seperately
+    if hasattr(context, 'accelerator') and context.accelerator:
         context.priority = "Brake"
 
 
