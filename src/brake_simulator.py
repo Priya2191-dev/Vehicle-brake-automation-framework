@@ -1,7 +1,11 @@
-class BrakeSimulator:
-    def __init__(self, speed):
-        self.speed = speed
+def apply_brake(speed, pressure):
+    if speed < 0:
+        raise ValueError("Invalid speed")
 
-    def apply_brake(self, pressure):
-        self.speed -= pressure * 0.15
-        return max(self.speed, 0)
+    if pressure > 100:
+        raise ValueError("Pressure exceeds limit")
+
+    if speed == 0:
+        return "Stationary"
+
+    return "Decelerating"
