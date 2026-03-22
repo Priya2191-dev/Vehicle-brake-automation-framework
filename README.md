@@ -15,7 +15,7 @@ This project mimics real-world automotive systems by integrating:
 
 - Digital Twin vehicle modeling
 - Automated braking scenario
-- Brake system simulation
+- Brake simulation engine
 - CAN bus communication  
 - Telemetry monitoring  
 - AI-based anomaly detection  
@@ -28,13 +28,13 @@ This project mimics real-world automotive systems by integrating:
   
   Simulates speed, brake pressure, and acceleration.  
 
-- Brake Simulation Engine:
-  
-  Uses formula: new_speed = speed − (pressure × factor).
-
 - Automated Braking:
   
-  Detects obstacles and applies brakes automatically. 
+  Detects obstacles and applies brakes automatically.
+
+- Brake simulation engine:
+
+  This simulates vehicle deceleration when brake pressure applied.
 
 - CAN Bus Simulation:
   
