@@ -32,5 +32,5 @@ Feature: Brake System Edge and Negative Scenarios
 
   Scenario: Conflicting signals
     Given accelerator is ON
-    And brake is applied with pressure 70
+    When brake is applied with pressure 70  
     Then brake should take priority
