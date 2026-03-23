@@ -1,3 +1,4 @@
+import pytest
 from braking import automated_braking
 
 def test_emergency_brake():
