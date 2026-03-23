@@ -9,4 +9,4 @@ Feature: Vehicle behavior
     Given a vehicle with initial speed 100
     When vehicle brake is applied with pressure 20
     Then vehicle speed should be 96
-    And brake pressure should be 20
+    And digital twin brake pressure should be 20
