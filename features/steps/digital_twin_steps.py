@@ -22,6 +22,6 @@ def when_apply_brake(context, pressure):
 def then_verify_speed(context, expected):
     assert round(context.vehicle.speed, 2) == float(expected)
 
-@then('brake pressure should be {pressure}')
+@then('digital twin brake pressure should be {pressure}')
 def then_verify_pressure(context, pressure):
     assert context.vehicle.brake_pressure == float(pressure)
