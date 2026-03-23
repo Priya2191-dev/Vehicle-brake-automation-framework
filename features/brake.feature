@@ -1,6 +1,6 @@
 Feature: Automated Braking System
 
-  Scenario: Evaluate braking under different conditions
+  Scenario Outline: Evaluate braking under different conditions
     Given vehicle speed is <speed>
     And obstacle distance is <distance>
     When system evaluates braking
