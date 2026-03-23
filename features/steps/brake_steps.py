@@ -13,6 +13,6 @@ def given_distance(context, distance):
 def when_evaluate(context):
     context.pressure = automated_braking(context.speed, context.distance)
 
-@then('brake pressure should be {expected}')
+@then('digital twin brake pressure should be {expected}')
 def then_verify_pressure(context, expected):
     assert context.pressure == float(expected)
