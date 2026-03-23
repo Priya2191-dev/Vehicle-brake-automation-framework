@@ -1,7 +1,15 @@
-Feature: Automated Braking
+Feature: Automated Braking System
 
-Scenario: Emergency brake
-  Given vehicle speed is 80
-  And obstacle distance is 5
-  When system evaluates braking
-  Then brake pressure should be 40
+  Scenario: Evaluate braking under different conditions
+    Given vehicle speed is <speed>
+    And obstacle distance is <distance>
+    When system evaluates braking
+    Then brake pressure should be <pressure>
+
+    Examples:
+      | speed | distance | pressure |
+      | 80    | 5        | 40       |
+      | 100   | 3        | 80       |
+      | 60    | 15       | 20       |
+      | 80    | 30       | 0        |
+      | 0     | 5        | 0        |
