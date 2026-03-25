@@ -1,10 +1,15 @@
 Feature: CAN Bus Messaging
 
-  Scenario: Send a CAN message successfully
+  Scenario Outline: Send and validate CAN messages
     Given a CAN bus simulator
-    When a message is sent from "ECU1" to "ECU2" with signal "speed" and value 80
+    When a message is sent from "<sender>" to "<receiver>" with signal "<signal>" and value <value> and id <id>
     Then the message should be stored
-    And the sender should be "ECU1"
-    And the receiver should be "ECU2"
-    And the signal should be "speed"
-    And the value should be 80
+    And the sender should be "<sender>"
+    And the receiver should be "<receiver>"
+    And the signal should be "<signal>"
+    And the value should be <value>
+
+    Examples:
+      | sender | receiver | signal | value | id   |
+      | ECU1   | ECU2     | speed  | 80    | 257  |
+      | ECU2   | ECU3     | temp   | 90    | 258  |
