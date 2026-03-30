@@ -1,12 +1,17 @@
 from behave import given, when, then
 from anomaly_detection import detect_anomaly
 
+
+#  Case 1: With values
 @given('data values {values}')
-def given_data(context, values=None):
-    if values:
-        context.data = [int(v.strip()) for v in values.split(",")]
-    else:
-        context.data = []
+def given_data_with_values(context, values):
+    context.data = [int(v.strip()) for v in values.split(",")]
+
+
+# Case 2: Empty data 
+@given('data values')
+def given_empty_data(context):
+    context.data = []
 
 
 @when('anomaly detection is performed')
@@ -18,6 +23,13 @@ def when_detect(context):
 def when_detect_threshold(context, threshold):
     context.result = detect_anomaly(context.data, float(threshold))
 
+@when('I record invalid telemetry data')
+def when_invalid(context):
+    try:
+        context.monitor.record(-10, 20)
+    except ValueError as e:
+        context.error = e
+
 
 @then('anomaly should be detected')
 def then_anomaly(context):
@@ -27,3 +39,7 @@ def then_anomaly(context):
 @then('no anomaly should be detected')
 def then_no_anomaly(context):
     assert context.result == False
+
+@then('an error should be raised')
+def then_error(context):
+    assert isinstance(context.error, ValueError)
