@@ -1,31 +1,29 @@
 import pytest
 from anomaly_detection import detect_anomaly
 
-def test_detect_anomaly_true():
-    # Large deviation → anomaly
-    speeds = [50, 55, 60, 120]
-    assert detect_anomaly(speeds) == True
+def test_absolute_anomaly():
+    data = [50, 55, 60, 120]  # deviation > 30
+    assert detect_anomaly(data) == True
 
 
-def test_detect_anomaly_false():
-    # Normal variation → no anomaly
-    speeds = [50, 55, 60, 58]
-    assert detect_anomaly(speeds) == False
+def test_zscore_anomaly():
+    data = [50, 52, 53, 80]  # smaller deviation but high z-score
+    assert detect_anomaly(data, threshold=1.5) == True
 
 
-def test_no_variation():
-    # All values same → std = 0 → no anomaly
-    speeds = [50, 50, 50, 50]
-    assert detect_anomaly(speeds) == False
+def test_no_anomaly():
+    data = [50, 52, 53, 54]
+    assert detect_anomaly(data) == False
 
 
-def test_custom_threshold():
-    # Lower threshold → more sensitive
-    speeds = [50, 55, 60, 70]
-    assert detect_anomaly(speeds, threshold=1) == True
+def test_empty_data():
+    assert detect_anomaly([]) == False
 
 
-def test_empty_input():
-    # Edge case
-    speeds = []
-    assert detect_anomaly(speeds) == False
+def test_single_value():
+    assert detect_anomaly([50]) == False
+
+
+def test_zero_std():
+    data = [50, 50, 50, 50]
+    assert detect_anomaly(data) == False
