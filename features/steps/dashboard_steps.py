@@ -35,6 +35,6 @@ def then_file_created(context):
     assert os.path.exists("plot.png")
 
 
-@then('an error should be raised')
-def then_error(context):
+@then('an dashboard error should be raised')
+def then_dashboard_error(context):
     assert isinstance(context.error, ValueError)
