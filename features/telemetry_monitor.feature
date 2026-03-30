@@ -16,4 +16,4 @@ Feature: Telemetry Monitoring
   Scenario: Handle invalid input
     Given a telemetry monitor
     When I record invalid telemetry data
-    Then an error should be raised
+    Then an telemetry error should be raised
