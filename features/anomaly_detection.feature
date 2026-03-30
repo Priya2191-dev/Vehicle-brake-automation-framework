@@ -1,21 +1,26 @@
-Feature: Speed Anomaly Detection
+Feature: Hybrid Anomaly Detection
 
-  Scenario: Detect anomaly in speed values
-    Given speed values 50, 55, 60, 120
+  Scenario: Detect anomaly using absolute deviation
+    Given data values 50, 55, 60, 120
     When anomaly detection is performed
     Then anomaly should be detected
 
-  Scenario: No anomaly in normal speeds
-    Given speed values 50, 55, 60, 58
-    When anomaly detection is performed
-    Then no anomaly should be detected
-
-  Scenario: No anomaly when all speeds are equal
-    Given speed values 50, 50, 50, 50
-    When anomaly detection is performed
-    Then no anomaly should be detected
-
-  Scenario: Detect anomaly with custom threshold
-    Given speed values 50, 55, 60, 70
-    When anomaly detection is performed with threshold 1
+  Scenario: Detect anomaly using z-score
+    Given data values 50, 52, 53, 80
+    When anomaly detection is performed with threshold 1.5
     Then anomaly should be detected
+
+  Scenario: No anomaly in normal data
+    Given data values 50, 52, 53, 54
+    When anomaly detection is performed
+    Then no anomaly should be detected
+
+  Scenario: Handle empty data
+    Given data values
+    When anomaly detection is performed
+    Then no anomaly should be detected
+
+  Scenario: Handle single value
+    Given data values 50
+    When anomaly detection is performed
+    Then no anomaly should be detected
