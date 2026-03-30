@@ -1,4 +1,4 @@
-name: Vehicle brake automation framework CI Pipeline
+name: Vehicle Brake Automation CI Pipeline
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Checkout code
+    # 1. Checkout
     - name: Checkout Repository
       uses: actions/checkout@v3
 
@@ -27,14 +27,30 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # 4. Run Pytest (Unit Tests) and BDD test
-    - name: Run tests
+    # 4. Run Pytest with report
+    - name: Run Pytest
       env:
-        PYTHONPATH: ${{  github.workspace }}/src
+        PYTHONPATH: ${{ github.workspace }}/src
       run: |
-        pytest -v
-        behave -v
+        pytest -v --junitxml=pytest-report.xml
 
-    # 6. Generate Test Summary
+    # 5. Run Behave with report
+    - name: Run Behave
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
+      run: |
+        behave -f progress -o behave-report.txt
+
+    # 6. Upload test artifacts
+    - name: Upload Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-reports
+        path: |
+          pytest-report.xml
+          behave-report.txt
+          plot.png
+
+    # 7. Test Summary
     - name: Test Summary
       run: echo "All tests executed successfully!"
