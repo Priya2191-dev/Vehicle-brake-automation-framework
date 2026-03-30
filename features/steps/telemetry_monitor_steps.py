@@ -53,6 +53,6 @@ def when_invalid(context):
         context.error = e
 
 
-@then('an telemetry error should be raised')
-def then_telemetry_error(context):
+@then('an error should be raised')
+def then_error(context):
     assert isinstance(context.error, ValueError)
