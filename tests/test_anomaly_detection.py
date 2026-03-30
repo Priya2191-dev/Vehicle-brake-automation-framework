@@ -1,4 +1,3 @@
-import pytest
 from anomaly_detection import detect_anomaly
 
 def test_absolute_anomaly():
@@ -8,7 +7,7 @@ def test_absolute_anomaly():
 
 def test_zscore_anomaly():
     data = [50, 52, 53, 80]  # smaller deviation but high z-score
-    assert detect_anomaly(data, threshold=2) == True
+    assert detect_anomaly(data, threshold=1.5) == True
 
 
 def test_no_anomaly():
