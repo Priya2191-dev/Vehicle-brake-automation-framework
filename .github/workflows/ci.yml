@@ -41,13 +41,13 @@ jobs:
       run: |
         behave -f progress -o behave-report.txt
 
-    # 6. Install Allure (CLI)
+    # 6. Install Allure (Stable version)
     - name: Install Allure
-      uses: simple-elf/allure-report-action
-      if: always()
-      with:
-        allure_results: allure-results
-        allure_report: allure-report
+      run: |
+        wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.tgz
+        tar -zxvf allure-2.24.0.tgz
+        sudo mv allure-2.24.0 /opt/allure
+        sudo ln -s /opt/allure/bin/allure /usr/bin/allure
 
     # 7. Generate Allure Report
     - name: Generate Allure Report
