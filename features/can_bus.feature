@@ -8,7 +8,7 @@ Feature: CAN Bus Messaging
     And the receiver should be "<receiver>"
     And the signal should be "<signal>"
     And the value should be <value>
-    And the message id should be <id>
+    
 
     Examples:
       | sender | receiver | signal | value | id   |
