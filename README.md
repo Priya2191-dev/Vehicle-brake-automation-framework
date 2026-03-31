@@ -2,10 +2,11 @@
 
 ## Objective
 
-- To design and develop an automation framework for validating vehicle braking system using Python and BDD.
+- To design and develop an automation framework for validating vehicle braking system using Python,   Pytest and BDD.
 - To simulate real world braking scenarios including normal, edge and failure conditions.
 - To ensure system reliability by validating brake response, safety thresholds, input handling.
 - To integrate CI/CD for continuous testing and faster feedback on code changes.
+- To generate automated test reports using allure.
 
 ## Overview
 
@@ -30,7 +31,7 @@ This project mimics real-world automotive systems by integrating:
 
 - Automated Braking:
   
-  Detects obstacles and applies brakes automatically.
+  Implements automated braking logic based on distance.
 
 - Brake simulation engine:
 
@@ -38,19 +39,25 @@ This project mimics real-world automotive systems by integrating:
 
 - CAN Bus Simulation:
   
-  Simulates ECU communication.  
+  Sends and validates ECU communication messages and verify signal integrity.
 
 - Telemetry Monitoring:
   
-  Captures speed, pressure, and sensor data. 
+  Logs speed and brake pressure, calculate average speed and handles invalid inputs.
 
 - AI Anomaly Detection:
   
-  Detects abnormal system behavior. 
+  Detects abnormal system behavior.
+
+  Uses:
+
+  Mean deviation
+
+  Standard deviation (z-score method)
 
 - Dashboard Visualization:
   
-  Graphs using Matplotlib. 
+  Plot speed vs brake pressure. Graphs using Matplotlib. 
 
 ## Installations
 
@@ -60,34 +67,45 @@ cd Vehicle-brake-automation-framework
 
 pip install -r requirements.txt
 
-## Interactive Simulation Demo
+## Tech Stack
 
-[Open in google collab] (https://colab.research.google.com/github/Priya2191-dev/Vehicle-brake-automation-framework/blob/main/notebook/Vehicle-brake-automation-framework.ipynb)
+- Language: Python
+- Testing: Pytest, Behave(BDD)
+- CI/CD: Github Actions
+- Visualisation: Matplotlib
+- Data Analysis: NumPy
+- Reporting: Allure Reports
 
-## Testing
+## Testing Strategy
 
-- Automation Testing (Pytest + BDD)
-- CI/CD Integration
+- Unit Testing using Pytest
+- Behavior-Driven Testing using Behave
+- Edge Case Handling
+- Input Validation Testing
 
-## Usages
+## CI/CD Pipeline
 
-Run tests:
-
-- pytest
+- Runs on every push & pull request
+- Executes:
   
-- behave
+  Pytest(Unit tests)
+  
+  Behave(BDD tests)
+  
+- Generates
 
-## CI/CD
+  Allure reports
 
-GitHub actions pipeline run pytest and behave automatically. 
+  Coverage reports
 
-## Tech stack
+  Dashboard plots
 
-- matplotlib
-- python -can
-- numpy
-- pytest
-- behave
+## Reports & Outputs
+
+- Allure Test Reports
+- Behave Execution Logs
+- Coverage Report
+- Dashboard Plot(plot.png)
 
 ## Conclusion
 
