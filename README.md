@@ -85,14 +85,14 @@ pip install -r requirements.txt
 
 ## CI/CD Pipeline
 
-- Runs on every push & pull request
+- Runs on every push & pull request.
 - Executes:
   
   Pytest(Unit tests)
   
   Behave(BDD tests)
   
-- Generates
+- Generates:
 
   Allure reports
 
